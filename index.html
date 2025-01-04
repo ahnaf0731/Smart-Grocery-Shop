@@ -1,11 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Smart Grocery Shop</title>
+    <link rel="stylesheet" href="style.css">
     
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to SmSmart Grocery Shop</h1>
+        <p>Your one-stop shop for fresh groceries!</p>
+    </header>
+    <nav>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="auth-buttons">
+            <button onclick="openModal('loginModal')">Login</button>
+            <button onclick="openModal('signupModal')">Sign Up</button>
+        </div>
+    </nav>
+    <div class="hero">
+        <h1>Fresh Groceries Delivered to Your Doorstep</h1>
+        <p>Explore our wide range of fresh and organic products.</p>
+    </div>
+
+    <div class="categories-container">
+        <section class="categories">
+            <div  class="goods">
+                <h2>Fruits</h2>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 1">
+                    <h3>Fresh Apples</h3>
+                    <p>$2.99 per lb</p>
+                    <label for="amount1">Amount:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Fresh Apples', 2.99, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 2">
+                    <h3>Organic Carrots</h3>
+                    <p>$1.99 per lb</p>
+                    <label for="amount2">Amount:</label>
+                    <input type="number" id="amount2" name="amount2" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Organic Carrots', 1.99, document.getElementById('amount2').value)">Add
+                        to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 3">
+                    <h3>Milk (1 Gallon)</h3>
+                    <p>$3.49</p>
+                    <label for="amount3">Amount:</label>
+                    <input type="number" id="amount3" name="amount3" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Milk (1 Gallon)', 3.49, document.getElementById('amount3').value)">Add
+                        to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 4">
+                    <h3>Brown Bread</h3>
+                    <p>$2.49</p>
+                    <label for="amount4">Amount:</label>
+                    <input type="number" id="amount4" name="amount4" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Brown Bread', 2.49, document.getElementById('amount4').value)">Add to
+                        Cart</button>
+                </div>
+            </div>
+            ==
+            <div id="veg" class="goods">
+                <h1>vegetables</h1>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 1">
+                    <h3>Fresh Apples</h3>
+                    <p>$2.99 per lb</p>
+                    <label for="amount1">Amount:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Fresh Apples', 2.99, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 2">
+                    <h3>Organic Carrots</h3>
+                    <p>$1.99 per lb</p>
+                    <label for="amount2">Amount:</label>
+                    <input type="number" id="amount2" name="amount2" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Organic Carrots', 1.99, document.getElementById('amount2').value)">Add
+                        to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 3">
+                    <h3>Milk (1 Gallon)</h3>
+                    <p>$3.49</p>
+                    <label for="amount3">Amount:</label>
+                    <input type="number" id="amount3" name="amount3" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Milk (1 Gallon)', 3.49, document.getElementById('amount3').value)">Add
+                        to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 4">
+                    <h3>Brown Bread</h3>
+                    <p>$2.49</p>
+                    <label for="amount4">Amount:</label>
+                    <input type="number" id="amount4" name="amount4" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Brown Bread', 2.49, document.getElementById('amount4').value)">Add to
+                        Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- POS Sidebar -->
+        <div class="pos-bar">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be added here -->
+            </ul>
+            <h3>Total: $<span id="total-amount">0.00</span></h3>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" id="loginUsername">
+            <input type="password" placeholder="Password" id="loginPassword">
+            <button onclick="closeModal('loginModal')">Login</button>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Username" id="signupUsername">
+            <input type="password" placeholder="Password" id="signupPassword">
+            <button onclick="closeModal('signupModal')">Sign Up</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SmSmart Grocery Shop | All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        // Function to open the modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Function to add product to the cart
+        function addToCart(productName, price, amount) {
+            let item = cart.find(item => item.productName === productName);
+            amount = parseInt(amount);
+
+            if (item) {
+                // Update quantity if product already exists in cart
+                item.quantity += amount;
+                item.totalPrice = item.quantity * item.price;
+            } else {
+                // Add new item to the cart if it's not in there yet
+                cart.push({
+                    productName,
+                    price,
+                    quantity: amount,
+                    totalPrice: price * amount
+                });
+            }
+
+            updateCartDisplay();
+            updateTotalAmount();
+        }
+
+        // Function to update the cart display
+        function updateCartDisplay() {
+            const cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = ''; // Clear current cart items
+
+            cart.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${item.productName} - $${item.totalPrice.toFixed(2)} (${item.quantity} units)`;
+                cartItems.appendChild(listItem);
+            });
+        }
+
+        // Function to update the total amount
+        function updateTotalAmount() {
+            const totalAmount = cart.reduce((total, item) => total + item.totalPrice, 0);
+            document.getElementById("total-amount").textContent = totalAmount.toFixed(2);
+        }
+
+        // Checkout function (simple alert for now)
+        function checkout() {
+            const cartItems = document.getElementById("cart-items").children;
+            if (cartItems.length === 0) {
+                alert("Your cart is empty!");
+            } else {
+                alert("Proceeding to checkout...");
+            }
+        }
+
+        // Close modal if clicked outside of modal content
+        window.onclick = function(event) {
+            if (event.target.className === "modal") {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
 </body>
+
 </html>
