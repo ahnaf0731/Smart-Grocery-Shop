@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <!-- <h1>Welcome to SmSmart Grocery Shop</h1> -->
+        <h1>Welcome to SmSmart Grocery Shop</h1>
         <p>Your one-stop shop for fresh groceries!</p>
     </header>
     <nav>
@@ -36,82 +36,630 @@
             <div  class="goods">
                 <h2>Fruits</h2>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Product 1">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\apple1830.jpg" alt="Product 1">
                     <h3>Fresh Apples</h3>
-                    <p>$2.99 per lb</p>
-                    <label for="amount1">Amount:</label>
+                    <p>Rs 1830 per kg</p>
+                    <label for="amount1">Units:</label>
                     <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
                     <button onclick="addToCart('Fresh Apples', 2.99, document.getElementById('amount1').value)">Add to
                         Cart</button>
                 </div>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Product 2">
-                    <h3>Organic Carrots</h3>
-                    <p>$1.99 per lb</p>
-                    <label for="amount2">Amount:</label>
-                    <input type="number" id="amount2" name="amount2" min="1" value="1" style="width: 60px;">
-                    <button onclick="addToCart('Organic Carrots', 1.99, document.getElementById('amount2').value)">Add
-                        to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Product 3">
-                    <h3>Milk (1 Gallon)</h3>
-                    <p>$3.49</p>
-                    <label for="amount3">Amount:</label>
-                    <input type="number" id="amount3" name="amount3" min="1" value="1" style="width: 60px;">
-                    <button onclick="addToCart('Milk (1 Gallon)', 3.49, document.getElementById('amount3').value)">Add
-                        to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Product 4">
-                    <h3>Brown Bread</h3>
-                    <p>$2.49</p>
-                    <label for="amount4">Amount:</label>
-                    <input type="number" id="amount4" name="amount4" min="1" value="1" style="width: 60px;">
-                    <button onclick="addToCart('Brown Bread', 2.49, document.getElementById('amount4').value)">Add to
-                        Cart</button>
-                </div>
-            </div>
-            ==
-            <div id="veg" class="goods">
-                <h1>vegetables</h1>
-                <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Product 1">
-                    <h3>Fresh Apples</h3>
-                    <p>$2.99 per lb</p>
-                    <label for="amount1">Amount:</label>
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\avocado90.jpg" alt="">
+                    <h3>Avocado</h3>
+                    <p>Rs 900 per kg</p>
+                    <label for="amount1">Units:</label>
                     <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
-                    <button onclick="addToCart('Fresh Apples', 2.99, document.getElementById('amount1').value)">Add to
+                    <button onclick="addToCart('Avocado', 900.0, document.getElementById('amount1').value)">Add to
                         Cart</button>
                 </div>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Product 2">
-                    <h3>Organic Carrots</h3>
-                    <p>$1.99 per lb</p>
-                    <label for="amount2">Amount:</label>
-                    <input type="number" id="amount2" name="amount2" min="1" value="1" style="width: 60px;">
-                    <button onclick="addToCart('Organic Carrots', 1.99, document.getElementById('amount2').value)">Add
-                        to Cart</button>
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\banana.jpg" alt="">
+                    <h3>Banana</h3>
+                    <p>Rs 180 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Banana', 180.0, document.getElementById('amount1').value)">Add to
+                        Cart</button>
                 </div>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Product 3">
-                    <h3>Milk (1 Gallon)</h3>
-                    <p>$3.49</p>
-                    <label for="amount3">Amount:</label>
-                    <input type="number" id="amount3" name="amount3" min="1" value="1" style="width: 60px;">
-                    <button onclick="addToCart('Milk (1 Gallon)', 3.49, document.getElementById('amount3').value)">Add
-                        to Cart</button>
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\grapes1870.jpg" alt="">
+                    <h3>Grapes</h3>
+                    <p>Rs 1870 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Grapes', 1870, document.getElementById('amount1').value)">Add to
+                        Cart</button>
                 </div>
                 <div class="product">
-                    <img src="https://via.placeholder.com/150" alt="Product 4">
-                    <h3>Brown Bread</h3>
-                    <p>$2.49</p>
-                    <label for="amount4">Amount:</label>
-                    <input type="number" id="amount4" name="amount4" min="1" value="1" style="width: 60px;">
-                    <button onclick="addToCart('Brown Bread', 2.49, document.getElementById('amount4').value)">Add to
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\greenapple1950.jpg" alt="">
+                    <h3>Green Apple</h3>
+                    <p>Rs 1950 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Green Apple', 1950, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\jambola410.jpg" alt="">
+                    <h3>Jambola</h3>
+                    <p>Rs 410 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Jambola', 410, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\katu anoda690.jpg" alt="">
+                    <h3>Katu Anoda</h3>
+                    <p>Rs 690 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Katu Anoda', 690, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\mandrain490.jpg" alt="">
+                    <h3>Mandrain</h3>
+                    <p>Rs 490 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Mandrain', 490, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\mangosteen2310.jpg" alt="">
+                    <h3>Mangosteen</h3>
+                    <p>Rs 2310 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Mangosteen', 2310, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\melon190.jpg" alt="">
+                    <h3>Melon</h3>
+                    <p>Rs 190 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Melon', 190, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\orange2160.jpg" alt="">
+                    <h3>Orange</h3>
+                    <p>Rs 2160 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Orange', 2160, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\papaya190.jpg" alt="">
+                    <h3>Papaya</h3>
+                    <p>Rs 190 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Papaya', 190, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\pineapple450.jpg" alt="">
+                    <h3>Pine Apple</h3>
+                    <p>Rs 450 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Pine Apples', 450, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\pomegranate2820.jpg" alt="">
+                    <h3>Pomegranate</h3>
+                    <p>Rs 2820 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Pomegranate', 2820, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\woodapple560.jpg" alt="">
+                    <h3>Wood Apple</h3>
+                    <p>Rs 560 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Wood Apple', 560, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                
+            </div>
+
+            <!-- <div class="carousel-buttons">
+                <button onclick="prevItem()">&#8249;</button>
+                <button onclick="nextItem()">&#8250;</button>
+            </div> -->
+
+            <div class="goods">
+                <h2>Vegetables</h2>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\beetroot.jpg" alt="">
+                    <h3>Beetroot</h3>
+                    <p>Rs 180 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Beetroot', 180, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\bittergourd.jpg" alt="">
+                    <h3>Bitter Gourd</h3>
+                    <p>Rs 160 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Bitter Gourd', 160, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\brinjals.jpg" alt="">
+                    <h3>Brinjals</h3>
+                    <p>Rs 220 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Brinjals', 220, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\broccoli.jpg" alt="">
+                    <h3>Broccoli</h3>
+                    <p>Rs 540 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Broccoli', 540, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\capsicum.jpg" alt="">
+                    <h3>Capsicum</h3>
+                    <p>Rs 145 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Copsicum', 145, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\carrot.jpg" alt="">
+                    <h3>Carrot</h3>
+                    <p>Rs 820 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Carrot', 820, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\coconut.jpg" alt="">
+                    <h3>Coconut</h3>
+                    <p>Rs 170</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Coconut', 170, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\cucumber.jpg" alt="">
+                    <h3>Cucumber</h3>
+                    <p>Rs 180 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Cucumber', 180, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\dambala.jpg" alt="">
+                    <h3>Dambala</h3>
+                    <p>Rs 135 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Dambala', 135, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\tomatoes.jpg" alt="">
+                    <h3>Tomatoes</h3>
+                    <p>Rs 430 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Tomatoes', 430, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\red onions.jpg" alt="">
+                    <h3>Red Onions</h3>
+                    <p>Rs 300 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Red Onions', 300, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\pumpkin.jpg" alt="">
+                    <h3>Pumkin</h3>
+                    <p>Rs 150 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Pumkin', 150, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\potatoes.jpg" alt="">
+                    <h3>Potatoes</h3>
+                    <p>Rs 260 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Potatoes', 260, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\onion.jpg" alt="">
+                    <h3>Onions</h3>
+                    <p>Rs 320 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Onions', 320, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\ladiesfingers.jpg" alt="">
+                    <h3>Ladies Fingers</h3>
+                    <p>Rs 900 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Ladies Fingers', 900, document.getElementById('amount1').value)">Add to
                         Cart</button>
                 </div>
             </div>
+            <div class="goods">
+                <h2>Meat</h2>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\beefcubes.jpg" alt="">
+                    <h3>Beef Cubes</h3>
+                    <p>Rs 2400 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Beef Cubes', 2400, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\beeftopside.jpg" alt="">
+                    <h3>Beef Topside</h3>
+                    <p>Rs 2300 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Beef Topside', 2300, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\chickendrumsticks.jpg" alt="">
+                    <h3>Chicken Drumstick</h3>
+                    <p>Rs 1150 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Chicken Drumstick', 1150, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\chickenneck.jpg" alt="">
+                    <h3>Chicken Neck</h3>
+                    <p>Rs 900 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Chicken Neck', 900, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\chickgizzard.jpg" alt="">
+                    <h3>Chicken Gizzard</h3>
+                    <p>Rs 850 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Chicken Gizzard', 850, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\chickthigh.jpg" alt="">
+                    <h3>Chicken Thigh</h3>
+                    <p>Rs 1300 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Chicken Thigh', 1300, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\chickwings.jpg" alt="">
+                    <h3>Chicken Wings</h3>
+                    <p>Rs 1250 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Chicken Wings', 1250, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\muttonleg.jpg" alt="">
+                    <h3>Mutton Leg</h3>
+                    <p>Rs 2300 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Mutton Leg', 2300, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\muttonlegboneless.jpg" alt="">
+                    <h3>Mutton Leg Boneless</h3>
+                    <p>Rs 2450 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Mutton Boneless', 2450, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\lambleg.jpg" alt="">
+                    <h3>Lamb Leg</h3>
+                    <p>Rs 2130 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Lamb Leg', 2130, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="goods">
+                <h2>Fish</h2>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fish\tuna3490.jpg" alt="">
+                    <h3>Tuna</h3>
+                    <p>Rs 3490 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Tuna', 3490, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fish\cuttlefish2450.jpg" alt="">
+                    <h3>Cuttle Fish</h3>
+                    <p>Rs 2450 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Cuttle Fish', 2450, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fish\kumbalawa1410.jpg" alt="">
+                    <h3>Kumbala</h3>
+                    <p>Rs 1410 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Kumbala', 1410, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fish\hurulla1120.jpg" alt="">
+                    <h3>Hurulla</h3>
+                    <p>Rs 1120 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Hurulla', 1120, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fish\prawns2580.jpg" alt="">
+                    <h3>Prawns</h3>
+                    <p>Rs 2580 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Prawns', 2580, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="goods">
+                <h2>Bakery</h2>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\bakery\bread150.jpg" alt="">
+                    <h3>Bread</h3>
+                    <p>Rs 150</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Bread', 150, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\bakery\chelseabun265.jpg" alt="">
+                    <h3>Chelsea Bun</h3>
+                    <p>Rs 265</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Chelsea Bun', 265, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\bakery\chocolate nut cake1155.jpg" alt="">
+                    <h3>Chocolate Nut cake</h3>
+                    <p>Rs 1155 per kg</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Chocolate cake', 1155, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\bakery\frenchbrd295.jpg" alt="">
+                    <h3>French Bread</h3>
+                    <p>Rs 150 </p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('French Bread', 150, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\bakery\roastbread135.jpg" alt="">
+                    <h3>Roast Bread</h3>
+                    <p>Rs 150 </p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Roast Bread', 150, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="goods">
+                <h2>Beverges</h2>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\beverges\anchor1050.jpg" alt="">
+                    <h3>Anchor</h3>
+                    <p>Rs 1050</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Anchor', 1050, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\beverges\rathi1050.jpg" alt="">
+                    <h3>Rathi</h3>
+                    <p>Rs 1050</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Rathi', 1050, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\beverges\kotmalemilk120.jpg" alt="">
+                    <h3>Kotmale Milk</h3>
+                    <p>Rs 120</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Kotmale Milk', 120, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\beverges\liptontea25.jpg" alt="">
+                    <h3>Lipton Tea</h3>
+                    <p>Rs 275</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Lipton Tea', 275, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\beverges\redbull800.jpg" alt="">
+                    <h3>Red Bull</h3>
+                    <p>Rs 800</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Red Bull', 800, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="goods">
+                <h2>Juice</h2>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\juice\creamsoda1,5400.jpg" alt="">
+                    <h3>Cream soda</h3>
+                    <p>Rs 400</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Cream soda',400, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\juice\fanta300.jpg" alt="">
+                    <h3>Fanta</h3>
+                    <p>Rs 400</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Fanta', 400, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\juice\pepsi1.5l400.jpg" alt="">
+                    <h3>Pepsi</h3>
+                    <p>Rs 410</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Pepsi', 410, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\juice\icedtea490.jpg" alt="">
+                    <h3>Ice Tea</h3>
+                    <p>Rs 490</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Ice Tea', 490, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\juice\kik200.jpg" alt="">
+                    <h3>Kik</h3>
+                    <p>Rs 200</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Kik', 200, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\juice\mango550.jpg" alt="">
+                    <h3>Mango</h3>
+                    <p>Rs 550</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Mango', 550, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+            </div>
+            <div class="goods">
+                <h2>Snacks</h2>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\snacks\jumbo peanut320.jpg" alt="">
+                    <h3>Jumbo Peanut</h3>
+                    <p>Rs 320</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Jumbo Peanut', 320, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\snacks\kome rice240.jpg" alt="">
+                    <h3>Kome Rice</h3>
+                    <p>Rs 240</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Kome Rice', 240, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\snacks\tipi tip60.jpg" alt="">
+                    <h3>Tipi Tip</h3>
+                    <p>Rs 60</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Tipi Tip', 60, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\snacks\tetos tomato 225.jpg" alt="">
+                    <h3>Tetos tomato</h3>
+                    <p>Rs 225</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Tetos tomato', 225, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                <div class="product">
+                    <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\snacks\noas garlic murukku250.jpg" alt="">
+                    <h3>Noas Garlic murukku</h3>
+                    <p>Rs 250</p>
+                    <label for="amount1">Units:</label>
+                    <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
+                    <button onclick="addToCart('Noas murukku', 250, document.getElementById('amount1').value)">Add to
+                        Cart</button>
+                </div>
+                
+            </div>
+
         </section>
 
         <!-- POS Sidebar -->
@@ -120,7 +668,7 @@
             <ul id="cart-items">
                 <!-- Cart items will be added here -->
             </ul>
-            <h3>Total: $<span id="total-amount">0.00</span></h3>
+            <h3>Total: Rs<span id="total-amount">0.00</span></h3>
             <button onclick="checkout()">Checkout</button>
         </div>
     </div>
@@ -221,7 +769,43 @@
                 closeModal(event.target.id);
             }
         }
-    </script>
+
+        </script>
+
+        <script>
+// //navigate products
+
+//         let currentIndex = 0;
+//         let caart = [];
+
+//         function updategoods() {
+//             const goods = document.getElementsByClassName("goods");
+//             const products = document.querySelectorAll(".product");
+//             const totalproducts = products.length;
+
+//             // Adjust transform for the current index
+//             const translateX = -(currentIndex * 100);
+//             goods.style.transform = `translateX(${translateX}%)`;
+
+//             // Handle edge cases to loop around
+//             if (currentIndex < 0) {
+//                 currentIndex = totalproducts - 1;
+//             } else if (currentIndex >= totalproducts) {
+//                 currentIndex = 0;
+//             }
+//         }
+
+//         function prevItem() {
+//             currentIndex--;
+//             updategoods();
+//         }
+
+//         function nextproduct() {
+//             currentIndex++;
+//             updategoods();
+//         }
+        
+//     </script>
 </body>
 
 </html>
