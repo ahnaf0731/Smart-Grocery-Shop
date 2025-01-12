@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <!-- <h1>Welcome to SmSmart Grocery Shop</h1> -->
+        <h1>Welcome to Smart Grocery Shop</h1> 
         <p>Your one-stop shop for fresh groceries!</p>
     </header>
     <nav>
@@ -34,14 +34,15 @@
     <div class="categories-container">
         <section class="categories">
             <div  class="goods">
-                <h2>Fruits</h2>
+                <span>Fruits</span>
+                
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\apple1830.jpg" alt="Product 1">
                     <h3>Fresh Apples</h3>
                     <p>Rs 1830 per kg</p>
                     <label for="amount1">Units:</label>
                     <input type="number" id="amount1" name="amount1" min="1" value="1" style="width: 60px;">
-                    <button onclick="addToCart('Fresh Apples', 2.99, document.getElementById('amount1').value)">Add to
+                    <button onclick="addToCart('Fresh Apples', 1830, document.getElementById('amount1').value)">Add to
                         Cart</button>
                 </div>
                 <div class="product">

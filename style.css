@@ -69,18 +69,42 @@ nav a:hover {
     border-width: 5px;
     background-color: #4CAF50;
     padding: 15px;
+    display:flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 400px;
+    width: 900px;
+    
+    
+    
+}
+
+/* .goods h2{
+    text-align: center;
+    position:static;
+    display:block; */
+
+span{
+    font-size: 40px;
+    display: block;
+    align-items: center;
+    padding-left: 450px;
     
 }
 #fruits{
     border-radius: 25px;
 }
 .product {
-    border: 1px solid #ddd;
+    border: 3px solid #ddd;
+    margin: 10px;
+    margin-bottom: 25px;
     padding: 10px;
     text-align: center;
     border-radius: 8px;
     display: inline-block;
     flex-wrap: wrap;
+    background-color: white;
   
 }
 
@@ -93,6 +117,10 @@ nav a:hover {
 .product h3 {
     font-size: 18px;
     color: #333;
+}
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .categories p {
