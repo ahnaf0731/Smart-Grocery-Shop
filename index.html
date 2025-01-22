@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Grocery Shop</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="backend.js"></script>
     
+
+   
 </head>
 
 <body>
     <header>
+       
         <h1>Welcome to Smart Grocery Shop</h1> 
         <p>Your one-stop shop for fresh groceries!</p>
     </header>
@@ -27,6 +31,7 @@
         </div>
     </nav>
     <div class="hero">
+       
         <h1>Fresh Groceries Delivered to Your Doorstep</h1>
         <p>Explore our wide range of fresh and organic products.</p>
     </div>
@@ -34,8 +39,10 @@
     <div class="categories-container">
         <section class="categories">
             <div  class="goods">
-                <span>Fruits</span>
                 
+                <div class="tite"><h2>Fruits</h2></div>
+                
+                <div class="box">
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fruits\apple1830.jpg" alt="Product 1">
                     <h3>Fresh Apples</h3>
@@ -171,16 +178,18 @@
                     <button onclick="addToCart('Wood Apple', 560, document.getElementById('amount1').value)">Add to
                         Cart</button>
                 </div>
-                
+            </div>
             </div>
 
-            <!-- <div class="carousel-buttons">
+           <!-- <div class="carousel-buttons">
                 <button onclick="prevItem()">&#8249;</button>
                 <button onclick="nextItem()">&#8250;</button>
-            </div> -->
+            </div>  -->
 
             <div class="goods">
-                <h2>Vegetables</h2>
+                <div class="tite"><h2>Vegetables</h2></div>
+                <div class="box">
+
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\veg\beetroot.jpg" alt="">
                     <h3>Beetroot</h3>
@@ -317,8 +326,11 @@
                         Cart</button>
                 </div>
             </div>
+        </div>
+
             <div class="goods">
-                <h2>Meat</h2>
+                <div class="tite"><h2>Meat</h2></div>
+                <div class="box">
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\meat\beefcubes.jpg" alt="">
                     <h3>Beef Cubes</h3>
@@ -410,8 +422,10 @@
                         Cart</button>
                 </div>
             </div>
+        </div>
             <div class="goods">
-                <h2>Fish</h2>
+                <div class="tite"><h2>Fish</h2></div>
+                <div class="box">
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\fish\tuna3490.jpg" alt="">
                     <h3>Tuna</h3>
@@ -457,9 +471,13 @@
                     <button onclick="addToCart('Prawns', 2580, document.getElementById('amount1').value)">Add to
                         Cart</button>
                 </div>
+            
             </div>
+            </div>
+
             <div class="goods">
-                <h2>Bakery</h2>
+                <div class="tite"><h2>Bakery</h2></div>
+                <div class="box">
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\bakery\bread150.jpg" alt="">
                     <h3>Bread</h3>
@@ -506,8 +524,11 @@
                         Cart</button>
                 </div>
             </div>
+            </div>
+
             <div class="goods">
-                <h2>Beverges</h2>
+                <div class="tite"><h2>Beverges</h2></div>
+                <div class="box">
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\beverges\anchor1050.jpg" alt="">
                     <h3>Anchor</h3>
@@ -554,8 +575,12 @@
                         Cart</button>
                 </div>
             </div>
+            </div>
+
             <div class="goods">
-                <h2>Juice</h2>
+                <div class="tite"><h2>Juice</h2></div>
+
+                <div class="box">
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\juice\creamsoda1,5400.jpg" alt="">
                     <h3>Cream soda</h3>
@@ -611,8 +636,11 @@
                         Cart</button>
                 </div>
             </div>
+            </div>
+
             <div class="goods">
-                <h2>Snacks</h2>
+                <div class="tite"><h2>Snacks</h2></div>
+                <div class="box">
                 <div class="product">
                     <img src="F:\Computer Engineering UOR\Semester 3\GUI Programming\Practices\trail\images\snacks\jumbo peanut320.jpg" alt="">
                     <h3>Jumbo Peanut</h3>
@@ -658,7 +686,7 @@
                     <button onclick="addToCart('Noas murukku', 250, document.getElementById('amount1').value)">Add to
                         Cart</button>
                 </div>
-                
+            </div>
             </div>
 
         </section>
@@ -669,7 +697,7 @@
             <ul id="cart-items">
                 <!-- Cart items will be added here -->
             </ul>
-            <h3>Total: Rs<span id="total-amount">0.00</span></h3>
+            <h3>Total: Rs <span id="total-amount">0.00</span></h3>
             <button onclick="checkout()">Checkout</button>
         </div>
     </div>
@@ -743,7 +771,7 @@
 
             cart.forEach(item => {
                 const listItem = document.createElement("li");
-                listItem.textContent = `${item.productName} - $${item.totalPrice.toFixed(2)} (${item.quantity} units)`;
+                listItem.textContent = `${item.productName} - Rs ${item.totalPrice.toFixed(2)} (${item.quantity})`;
                 cartItems.appendChild(listItem);
             });
         }

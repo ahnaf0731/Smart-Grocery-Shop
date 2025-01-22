@@ -39,6 +39,9 @@ nav a:hover {
     text-align: center;
     padding: 50px;
     background: #f4f4f4;
+    background-image: url(ww.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
@@ -51,6 +54,10 @@ nav a:hover {
     justify-content: space-between;
     padding: 20px;
     background-color: #575757;
+    background-image: url("04.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    
 }
 
 .categories {
@@ -64,34 +71,51 @@ nav a:hover {
     border-radius: 25px;
 }
 .goods{
+    border: 5px solid black;
     border-radius: 25px;
-    border-color: #951e1e;
-    border-width: 5px;
-    background-color: #4CAF50;
-    padding: 15px;
+   background-origin: padding-box;
+   background-color: #333;
+   background-color: rgba(0, 0, 0, 0.5);
+   
+   color: #ddd;
+    padding: 30px;
+    /* display:block;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden; */
+     height: 500px; 
+    width: 900px;
+    margin-top: 0%;
+    
+}
+
+.box{
     display:flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
-    height: 400px;
+}
+
+.tite{
+    color:#ddd;
     width: 900px;
-    
-    
-    
-}
-
-/* .goods h2{
-    text-align: center;
-    position:static;
-    display:block; */
-
-span{
-    font-size: 40px;
+    height:50px;
     display: block;
-    align-items: center;
-    padding-left: 450px;
+    position: relative;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: 25px;
+    margin-bottom: 15px;
     
 }
+
+.tite h2{
+    margin-top: 0%;
+    font-weight: 25px;
+   
+}
+
 #fruits{
     border-radius: 25px;
 }
@@ -105,6 +129,7 @@ span{
     display: inline-block;
     flex-wrap: wrap;
     background-color: white;
+    
   
 }
 
@@ -174,7 +199,7 @@ footer {
     position: sticky;
     top: 80px;
     right: 0;
-    width: 250px;
+    width: 300px;
     padding: 20px;
     background: #333;
     color: white;
@@ -183,15 +208,24 @@ footer {
     justify-content: flex-start;
     box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.1);
     z-index: 1;
-    height: auto;
+    height: 480px;
     max-height: calc(100vh - 80px);
     overflow-y: auto;
     margin-left: 10px;
+    margin-top: 20px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 5px solid black;
+    border-radius: 25px;
 }
 
 .pos-bar h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
+}
+#total-amount{
+    font-size: 24px;
 }
 
 .pos-bar ul {
@@ -210,6 +244,8 @@ footer {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    
+    position:sticky;
 }
 
 .pos-bar button:hover {

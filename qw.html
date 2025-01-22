@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Autoplay Slideshow</title>
+  <style>
+    /* Slideshow container */
+    .slideshow {
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Images container */
+    .slideshow-images {
+      display: flex;
+      animation: slide 8s infinite;
+      width: calc(400px * 3); /* Adjust width for the total number of images */
+    }
+
+    /* Individual images */
+    .slideshow-images img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    /* Keyframes for sliding effect */
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33.33% { transform: translateX(0); }
+      50% { transform: translateX(-400px); }
+      83.33% { transform: translateX(-400px); }
+      100% { transform: translateX(-800px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow">
+    <div class="slideshow-images">
+      <img src="https://via.placeholder.com/400x300?text=Image+1" alt="Image 1">
+      <img src="https://via.placeholder.com/400x300?text=Image+2" alt="Image 2">
+      <img src="https://via.placeholder.com/400x300?text=Image+3" alt="Image 3">
+    </div>
+  </div>
+</body>
+</html>
