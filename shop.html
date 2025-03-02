@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Smart Grocery Shop</title>
+  
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    #shop {
+      background-color: #575757;
+    }
+
+    .cart-btn {
+      background-color: #28a745;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .cart-btn:hover {
+      background-color: #218838;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #28a745;
+      padding: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Product Section */
+    .shop-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .shop-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    /* Product Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .price {
+      color: #28a745;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .add-to-cart {
+      background: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .add-to-cart:hover {
+      background: #218838;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div>
+      <a href="index.html">Home</a>
+      <a id="shop" href="shop.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="cart-btn" href="cart.html">🛒 Cart</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Shop at Smart Grocery Shop</h1>
+    <p>Find fresh and affordable groceries, delivered to your doorstep.</p>
+  </div>
+
+  <!-- Shop Section -->
+  <div class="shop-container">
+    <h2 class="shop-title">Our Products</h2>
+
+    <div class="products">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="images/products/apple.jpg" alt="Apple">
+        <h3>Fresh Apples</h3>
+        <p class="price">$2.99 / kg</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="images/products/banana.jpg" alt="Banana">
+        <h3>Bananas</h3>
+        <p class="price">$1.49 / kg</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="images/products/orange.jpg" alt="Orange">
+        <h3>Juicy Oranges</h3>
+        <p class="price">$3.99 / kg</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="images/products/milk.jpg" alt="Milk">
+        <h3>Fresh Milk</h3>
+        <p class="price">$1.99 / litre</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <img src="images/products/bread.jpg" alt="Bread">
+        <h3>Whole Wheat Bread</h3>
+        <p class="price">$2.49 / loaf</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <img src="images/products/snacks.jpg" alt="Snacks">
+        <h3>Crunchy Snacks</h3>
+        <p class="price">$4.99 / pack</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Smart Grocery Shop. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

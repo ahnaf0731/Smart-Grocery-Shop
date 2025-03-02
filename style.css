@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -22,6 +26,9 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1;
+}
+#Home{
+    background-color: #575757;
 }
 
 nav a {
