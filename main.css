@@ -84,7 +84,7 @@ nav a:hover {
 }
 
 .hero p{
-    color: #f4f4f4;
+    color:#f4f4f4;
 }
 
 .categories-container {
@@ -92,7 +92,7 @@ nav a:hover {
     justify-content: space-between;
     padding: 20px;
     background-color: #575757;
-    background-image: url("04.jpg");
+    background-image: url("bg.jpg");
     background-size: cover;
     background-attachment: fixed;
 
@@ -118,10 +118,6 @@ nav a:hover {
 
     color: #ddd;
     padding: 30px;
-    /* display:block;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden; */
     height: 500px;
     width: 900px;
     margin-top: 0%;
@@ -236,7 +232,6 @@ footer {
 
 .pos-bar {
     position: relative;
-    /* For Safari */
     position: sticky;
     top: 80px;
     right: 0;
@@ -294,7 +289,7 @@ footer {
     background-color: #45a049;
 }
 
-/* Modal styles */
+
 .modal {
     display: none;
     position: fixed;
