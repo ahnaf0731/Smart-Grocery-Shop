@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories - Smart Grocery Shop</title>
+
+    <style>
+      
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("bg.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        color: white;
+      }
+
+      nav {
+        background: #333;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+
+      #about {
+        background-color: #575757;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 14px 20px;
+        display: inline-block;
+      }
+
+      nav a:hover {
+        background-color: #575757;
+      }
+
+      .content {
+        padding: 20px;
+        max-width: 800px;
+        margin-top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 5px solid black;
+        border-radius: 25px;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      .hero {
+        background-color: #28a745;
+        background-size: cover;
+        background-position: center;
+        padding: 20px 20px;
+        text-align: center;
+        color: white;
+      }
+
+     
+      header {
+        background-color: #124d0f;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .category-card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .category-card:hover {
+        transform: scale(1.05);
+      }
+
+      .category-card h2 {
+        color: black;
+        font-size: 20px;
+      }
+
+      .category-card p {
+        font-size: 14px;
+        color:#333;
+      }
+
+      .category-icon {
+        font-size: 40px;
+        color: #a0ff8f;
+        margin-bottom: 10px;
+      }
+
+      img {
+        height: 100px;
+        width: 100px;
+      }
+
+
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+      }
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        .categories {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      #cate {
+        background-color: #575757;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <div>
+        <a href="main.html">Home</a>
+        <a id="cate" href="categories.html">Categories</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </nav>
+
+
+    <div class="hero">
+      <h1>Categories</h1>
+      <p>Your one-stop shop for fresh and affordable groceries.</p>
+    </div>
+
+
+    <div class="content">
+      <section class="categories">
+        <div class="category-card">
+          <i class="fas fa-shopping-basket category-icon"></i>
+          <h2>Fruits</h2>
+          <p>Enjoy fresh and seasonal fruits for a healthy lifestyle.</p>
+          <img src="images/fruits/apple1830.jpg" alt="" />
+        </div>
+        <div class="category-card">
+          <i class="fas fa-coffee category-icon"></i>
+          <h2>Vegetables</h2>
+          <p>Fresh and organic vegetables delivered to your doorstep.</p>
+
+          <img src="images/veg/carrot.jpg" alt="" />
+        </div>
+        <div class="category-card">
+          <i class="fas fa-home category-icon"></i>
+          <h2>Meat</h2>
+          <p>
+            Enjoy fresh, high-quality meat cuts for all your favorite meals.
+          </p>
+          <img src="images/meat/beeftopside.jpg" alt="" />
+        </div>
+        <div class="category-card">
+          <i class="fas fa-carrot category-icon"></i>
+          <h2>Fish</h2>
+          <p>
+            Experience the finest selection of fresh and flavorful fish for your
+            meals.
+          </p>
+          <img src="images/fish/tuna3490.jpg" alt="" />
+        </div>
+        <div class="category-card">
+          <i class="fas fa-apple-alt category-icon"></i>
+          <h2>Bakery</h2>
+          <p>
+            Indulge in a variety of freshly baked goods, from bread to pastries.
+          </p>
+          <img src="images/bakery/frenchbrd295.jpg" alt="" />
+        </div>
+        <div class="category-card">
+          <i class="fas fa-apple-alt category-icon"></i>
+          <h2>Beverges</h2>
+          <p>Refresh yourself with a wide range of beverages.</p>
+
+          <img src="images/beverges/anchor1050.jpg" alt="" />
+        </div>
+        <div class="category-card">
+          <i class="fas fa-apple-alt category-icon"></i>
+          <h2>Juice</h2>
+          <p>Enjoy fresh and seasonal juice for a healthy lifestyle.</p>
+          <img src="images/juice/fanta300.jpg" alt="" />
+        </div>
+        <div class="category-card">
+          <i class="fas fa-apple-alt category-icon"></i>
+          <h2>Snacks</h2>
+          <p>Enjoy fresh and seasonal Snacks for a healthy lifestyle.</p>
+          <img src="images/snacks/kome rice240.jpg" alt="" />
+        </div>
+      </section>
+    </div>
+
+
+    <footer>
+      <p>&copy; 2025 Smart Grocery Shop | All rights reserved.</p>
+    </footer>
+  </body>
+</html>

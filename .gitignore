@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+npm-debug.log
+package-lock.json
+
+# .NET / C# build outputs
+bin/
+obj/
+*.user
+*.suo
+*.cache
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+Database/*.db
+
+# IDE and Editor folders
+.vs/
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment variables
+.env
+.env.local
+
+# Build artifacts
+dist/
+build/
+*.dll
+*.exe
+*.pdb
