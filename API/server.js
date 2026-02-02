@@ -65,7 +65,14 @@ function initializeDatabase() {
     Username TEXT NOT NULL,
     TotalAmount REAL NOT NULL,
     OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP,
-    Status TEXT DEFAULT 'Completed'
+    Status TEXT DEFAULT 'Completed',
+    DeliveryStreet TEXT,
+    DeliveryCity TEXT,
+    DeliveryPostalCode TEXT,
+    DeliveryPhone TEXT,
+    DeliveryDate TEXT,
+    DeliveryTimeSlot TEXT,
+    PaymentMethod TEXT
   )`, (err) => {
     if (err) {
       console.error('Error creating Orders table:', err.message);
@@ -286,16 +293,32 @@ app.get('/api/users', (req, res) => {
 
 // POST create new order (checkout)
 app.post('/api/orders', (req, res) => {
-  const { username, items, totalAmount } = req.body;
+  const { username, items, totalAmount, deliveryAddress, deliverySchedule, paymentMethod } = req.body;
   
   if (!username || !items || !Array.isArray(items) || items.length === 0) {
     res.status(400).json({ error: 'Username and items are required' });
     return;
   }
 
-  // Insert order
-  const orderSql = 'INSERT INTO Orders (Username, TotalAmount) VALUES (?, ?)';
-  db.run(orderSql, [username, totalAmount], function(err) {
+  // Insert order with delivery details
+  const orderSql = `INSERT INTO Orders 
+    (Username, TotalAmount, DeliveryStreet, DeliveryCity, DeliveryPostalCode, 
+     DeliveryPhone, DeliveryDate, DeliveryTimeSlot, PaymentMethod) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  
+  const orderParams = [
+    username, 
+    totalAmount,
+    deliveryAddress?.street || null,
+    deliveryAddress?.city || null,
+    deliveryAddress?.postalCode || null,
+    deliveryAddress?.phone || null,
+    deliverySchedule?.date || null,
+    deliverySchedule?.timeSlot || null,
+    paymentMethod || null
+  ];
+  
+  db.run(orderSql, orderParams, function(err) {
     if (err) {
       res.status(500).json({ error: err.message });
       return;

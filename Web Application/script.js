@@ -23,6 +23,9 @@ function addToCart(productName, price, buttonElement) {
     if (typeof buttonElement === 'object' && buttonElement.parentElement) {
         const input = buttonElement.parentElement.querySelector('input[type="number"]');
         quantity = parseInt(input.value) || 1;
+        
+        // Create flying animation effect
+        createFlyingCartAnimation(buttonElement);
     } else {
         quantity = parseInt(buttonElement) || 1;
     }
@@ -44,6 +47,64 @@ function addToCart(productName, price, buttonElement) {
     
     updateCartDisplay();
     updateTotalAmount();
+}
+
+// Flying Cart Animation
+function createFlyingCartAnimation(buttonElement) {
+    // Get the product element and image
+    const productElement = buttonElement.parentElement;
+    const productImage = productElement.querySelector('img');
+    
+    if (!productImage) return;
+    
+    // Get the cart position
+    const cartElement = document.querySelector('.pos-bar .cart-header');
+    if (!cartElement) return;
+    
+    // Get positions
+    const imageRect = productImage.getBoundingClientRect();
+    const cartRect = cartElement.getBoundingClientRect();
+    
+    // Create flying image clone
+    const flyingImage = document.createElement('div');
+    flyingImage.className = 'flying-item';
+    flyingImage.innerHTML = `<img src="${productImage.src}" alt="Flying item">`;
+    
+    // Set initial position
+    flyingImage.style.left = imageRect.left + 'px';
+    flyingImage.style.top = imageRect.top + 'px';
+    flyingImage.style.width = imageRect.width + 'px';
+    flyingImage.style.height = imageRect.height + 'px';
+    
+    document.body.appendChild(flyingImage);
+    
+    // Add cart shake effect
+    cartElement.classList.add('cart-shake');
+    
+    // Trigger animation with slight delay for smooth start
+    setTimeout(() => {
+        flyingImage.style.left = cartRect.left + cartRect.width / 2 - 25 + 'px';
+        flyingImage.style.top = cartRect.top + 'px';
+        flyingImage.style.width = '50px';
+        flyingImage.style.height = '50px';
+        flyingImage.style.opacity = '0';
+        flyingImage.style.transform = 'scale(0.3) rotate(360deg)';
+    }, 10);
+    
+    // Remove elements after animation
+    setTimeout(() => {
+        flyingImage.remove();
+        cartElement.classList.remove('cart-shake');
+    }, 800);
+    
+    // Add success pulse to cart badge
+    const cartBadge = document.getElementById('cart-count');
+    if (cartBadge) {
+        cartBadge.classList.add('badge-pulse');
+        setTimeout(() => {
+            cartBadge.classList.remove('badge-pulse');
+        }, 600);
+    }
 }
 
 function updateCartDisplay() {
@@ -139,40 +200,171 @@ async function checkout() {
         return;
     }
     
-    let orderSummary = "Order Summary:\n\n";
+    // Open checkout modal with delivery details form
+    openCheckoutModal();
+}
+
+function openCheckoutModal() {
+    // Populate order summary in checkout modal
+    const checkoutOrderItems = document.getElementById('checkoutOrderItems');
+    checkoutOrderItems.innerHTML = '';
+    
     cart.forEach(item => {
-        orderSummary += `${item.productName} x ${item.quantity} = Rs ${item.totalPrice.toFixed(2)}\n`;
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'checkout-item';
+        itemDiv.innerHTML = `
+            <span class="checkout-item-name">${item.productName} x ${item.quantity}</span>
+            <span class="checkout-item-price">Rs ${item.totalPrice.toFixed(2)}</span>
+        `;
+        checkoutOrderItems.appendChild(itemDiv);
     });
     
+    // Update total
     const total = cart.reduce((sum, item) => sum + item.totalPrice, 0);
-    orderSummary += `\nTotal: Rs ${total.toFixed(2)}`;
+    document.getElementById('checkoutTotalAmount').textContent = total.toFixed(2);
     
-    const confirmed = confirm(orderSummary + "\n\nConfirm purchase?");
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('deliveryDate').setAttribute('min', today);
     
-    if (confirmed) {
-        // Save order to database if using API
-        if (USE_API) {
-            try {
-                const response = await createOrderAPI(currentUser.username, cart, total);
-                if (response.success) {
-                    alert(`Order placed successfully!\n\nOrder ID: ${response.data.orderId}\nTotal: Rs ${total.toFixed(2)}\n\nThank you for shopping with us!`);
-                    // Clear cart after successful order
-                    cart = [];
-                    updateCartDisplay();
-                    updateTotalAmount();
-                } else {
-                    alert("Failed to save order: " + response.error);
-                }
-            } catch (error) {
-                alert("Error processing order. Please try again.");
+    // Open the modal
+    openModal('checkoutModal');
+}
+
+async function confirmCheckout() {
+    // Validate form fields
+    const street = document.getElementById('deliveryStreet').value.trim();
+    const city = document.getElementById('deliveryCity').value.trim();
+    const postal = document.getElementById('deliveryPostal').value.trim();
+    const phone = document.getElementById('deliveryPhone').value.trim();
+    const date = document.getElementById('deliveryDate').value;
+    const timeSlot = document.querySelector('input[name="deliveryTime"]:checked');
+    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+    
+    // Validation
+    if (!street || !city || !postal || !phone) {
+        alert('Please fill in all address fields!');
+        return;
+    }
+    
+    if (!date) {
+        alert('Please select a delivery date!');
+        return;
+    }
+    
+    if (!timeSlot) {
+        alert('Please select a delivery time slot!');
+        return;
+    }
+    
+    const time = timeSlot.value;
+    
+    // Create order details
+    const total = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+    const orderDetails = {
+        username: currentUser.username,
+        items: cart,
+        deliveryAddress: {
+            street: street,
+            city: city,
+            postalCode: postal,
+            phone: phone
+        },
+        deliverySchedule: {
+            date: date,
+            timeSlot: time
+        },
+        paymentMethod: paymentMethod,
+        total: total,
+        orderDate: new Date().toISOString()
+    };
+    
+    // Save order to database if using API
+    if (USE_API) {
+        try {
+            const response = await createOrderAPI(currentUser.username, cart, total, orderDetails);
+            if (response.success) {
+                showOrderConfirmation(orderDetails, response.data.orderId);
+            } else {
+                alert("Failed to save order: " + response.error);
             }
-        } else {
-            // Local storage fallback
-            alert("Order placed successfully!\n\nTotal: Rs " + total.toFixed(2) + "\n\nThank you for shopping with us!");
-            cart = [];
-            updateCartDisplay();
-            updateTotalAmount();
+        } catch (error) {
+            // If API fails, still show confirmation
+            showOrderConfirmation(orderDetails, 'LOCAL-' + Date.now());
         }
+    } else {
+        // Local storage fallback
+        showOrderConfirmation(orderDetails, 'LOCAL-' + Date.now());
+    }
+}
+
+function showOrderConfirmation(orderDetails, orderId) {
+    const timeSlotText = {
+        'morning': 'Morning (8:00 AM - 12:00 PM)',
+        'afternoon': 'Afternoon (12:00 PM - 4:00 PM)',
+        'evening': 'Evening (4:00 PM - 8:00 PM)'
+    };
+    
+    const paymentText = {
+        'cash': 'Cash on Delivery',
+        'card': 'Credit/Debit Card',
+        'online': 'Online Banking'
+    };
+    
+    const confirmationMessage = `
+✅ Order Placed Successfully!
+
+Order ID: ${orderId}
+Total Amount: Rs ${orderDetails.total.toFixed(2)}
+
+📍 Delivery Address:
+${orderDetails.deliveryAddress.street}
+${orderDetails.deliveryAddress.city}, ${orderDetails.deliveryAddress.postalCode}
+Phone: ${orderDetails.deliveryAddress.phone}
+
+🕒 Delivery Schedule:
+Date: ${orderDetails.deliverySchedule.date}
+Time: ${timeSlotText[orderDetails.deliverySchedule.timeSlot]}
+
+💳 Payment Method: ${paymentText[orderDetails.paymentMethod]}
+
+Thank you for shopping with us!
+    `;
+    
+    alert(confirmationMessage);
+    
+    // Clear cart and close modal
+    cart = [];
+    updateCartDisplay();
+    updateTotalAmount();
+    closeModal('checkoutModal');
+    
+    // Clear form
+    document.getElementById('deliveryStreet').value = '';
+    document.getElementById('deliveryCity').value = '';
+    document.getElementById('deliveryPostal').value = '';
+    document.getElementById('deliveryPhone').value = '';
+    document.getElementById('deliveryDate').value = '';
+    
+    // Uncheck all time slots
+    const timeSlots = document.querySelectorAll('input[name="deliveryTime"]');
+    timeSlots.forEach(slot => slot.checked = false);
+}
+
+// Toggle order summary visibility in checkout modal
+function toggleOrderSummary() {
+    const summaryItems = document.getElementById('checkoutOrderItems');
+    const toggleText = document.getElementById('summaryToggleText');
+    const toggleIcon = document.getElementById('summaryToggleIcon');
+    
+    if (summaryItems.classList.contains('collapsed')) {
+        summaryItems.classList.remove('collapsed');
+        toggleText.textContent = 'Hide Details';
+        toggleIcon.textContent = '▲';
+    } else {
+        summaryItems.classList.add('collapsed');
+        toggleText.textContent = 'Show Details';
+        toggleIcon.textContent = '▼';
     }
 }
 

@@ -1615,6 +1615,167 @@
       </div>
     </div>
 
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+      <div class="modal-content checkout-modal">
+        <span class="close" onclick="closeModal('checkoutModal')">&times;</span>
+        <div class="modal-header">
+          <div class="modal-icon checkout-icon">🚚</div>
+          <h2>Delivery & Payment Details</h2>
+          <p class="modal-subtitle">Just a few steps to complete your order!</p>
+        </div>
+        
+        <div class="checkout-form">
+          <!-- Progress Steps -->
+          <div class="checkout-steps">
+            <div class="step active">
+              <div class="step-icon">📍</div>
+              <span>Address</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+              <div class="step-icon">🕒</div>
+              <span>Time</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+              <div class="step-icon">💳</div>
+              <span>Payment</span>
+            </div>
+          </div>
+
+          <!-- Delivery Address Section -->
+          <div class="form-section delivery-section">
+            <div class="section-header">
+              <span class="section-number">1</span>
+              <h3>Where should we deliver?</h3>
+            </div>
+            <div class="input-with-icon">
+              <label><span class="input-icon">🏠</span> Street Address</label>
+              <input type="text" id="deliveryStreet" class="checkout-input" placeholder="123 Main Street" required />
+            </div>
+            <div class="form-row">
+              <div class="input-with-icon">
+                <label><span class="input-icon">🏙️</span> City</label>
+                <input type="text" id="deliveryCity" class="checkout-input" placeholder="Colombo" required />
+              </div>
+              <div class="input-with-icon">
+                <label><span class="input-icon">📮</span> Postal Code</label>
+                <input type="text" id="deliveryPostal" class="checkout-input" placeholder="10000" required />
+              </div>
+            </div>
+            <div class="input-with-icon">
+              <label><span class="input-icon">📱</span> Phone Number</label>
+              <input type="tel" id="deliveryPhone" class="checkout-input" placeholder="+94 77 123 4567" required />
+            </div>
+          </div>
+
+          <!-- Delivery Time Section -->
+          <div class="form-section time-section">
+            <div class="section-header">
+              <span class="section-number">2</span>
+              <h3>When would you like to receive it?</h3>
+            </div>
+            <div class="input-with-icon">
+              <label><span class="input-icon">📅</span> Delivery Date</label>
+              <input type="date" id="deliveryDate" class="checkout-input" required />
+            </div>
+            <div class="time-slots">
+              <label class="time-slot">
+                <input type="radio" name="deliveryTime" value="morning" />
+                <div class="time-slot-card">
+                  <div class="time-icon">🌅</div>
+                  <div class="time-label">Morning</div>
+                  <div class="time-range">8:00 AM - 12:00 PM</div>
+                </div>
+              </label>
+              <label class="time-slot">
+                <input type="radio" name="deliveryTime" value="afternoon" />
+                <div class="time-slot-card">
+                  <div class="time-icon">☀️</div>
+                  <div class="time-label">Afternoon</div>
+                  <div class="time-range">12:00 PM - 4:00 PM</div>
+                </div>
+              </label>
+              <label class="time-slot">
+                <input type="radio" name="deliveryTime" value="evening" />
+                <div class="time-slot-card">
+                  <div class="time-icon">🌆</div>
+                  <div class="time-label">Evening</div>
+                  <div class="time-range">4:00 PM - 8:00 PM</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Payment Method Section -->
+          <div class="form-section payment-section">
+            <div class="section-header">
+              <span class="section-number">3</span>
+              <h3>How would you like to pay?</h3>
+            </div>
+            <div class="payment-options">
+              <label class="payment-card">
+                <input type="radio" name="paymentMethod" value="cash" checked />
+                <div class="payment-card-content">
+                  <div class="payment-icon-large">💵</div>
+                  <div class="payment-info">
+                    <div class="payment-name">Cash on Delivery</div>
+                    <div class="payment-desc">Pay when you receive</div>
+                  </div>
+                  <div class="payment-check">✓</div>
+                </div>
+              </label>
+              <label class="payment-card">
+                <input type="radio" name="paymentMethod" value="card" />
+                <div class="payment-card-content">
+                  <div class="payment-icon-large">💳</div>
+                  <div class="payment-info">
+                    <div class="payment-name">Credit/Debit Card</div>
+                    <div class="payment-desc">Visa, Mastercard, Amex</div>
+                  </div>
+                  <div class="payment-check">✓</div>
+                </div>
+              </label>
+              <label class="payment-card">
+                <input type="radio" name="paymentMethod" value="online" />
+                <div class="payment-card-content">
+                  <div class="payment-icon-large">🌐</div>
+                  <div class="payment-info">
+                    <div class="payment-name">Online Banking</div>
+                    <div class="payment-desc">Direct bank transfer</div>
+                  </div>
+                  <div class="payment-check">✓</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary-box">
+            <div class="summary-header">
+              <h3>📦 Your Order</h3>
+              <button type="button" class="toggle-summary" onclick="toggleOrderSummary()">
+                <span id="summaryToggleText">Show Details</span>
+                <span id="summaryToggleIcon">▼</span>
+              </button>
+            </div>
+            <div id="checkoutOrderItems" class="summary-items collapsed"></div>
+            <div class="checkout-total">
+              <span>Total Amount:</span>
+              <span class="checkout-total-price">Rs <span id="checkoutTotalAmount">0.00</span></span>
+            </div>
+          </div>
+
+          <button onclick="confirmCheckout()" class="checkout-confirm-btn">
+            <span class="btn-icon">✓</span>
+            <span>Confirm Order</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <p>&copy; 2025 Smart Grocery Shop | All rights reserved.</p>
     </footer>

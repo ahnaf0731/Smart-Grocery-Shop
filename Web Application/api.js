@@ -104,14 +104,21 @@ async function updateProductStock(productId, newStock) {
 }
 
 // Create order (save purchase to database)
-async function createOrderAPI(username, items, totalAmount) {
+async function createOrderAPI(username, items, totalAmount, orderDetails) {
   try {
     const response = await fetch(`${API_URL}/orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, items, totalAmount })
+      body: JSON.stringify({ 
+        username, 
+        items, 
+        totalAmount,
+        deliveryAddress: orderDetails?.deliveryAddress,
+        deliverySchedule: orderDetails?.deliverySchedule,
+        paymentMethod: orderDetails?.paymentMethod
+      })
     });
     
     const result = await response.json();
